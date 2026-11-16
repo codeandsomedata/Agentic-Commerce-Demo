@@ -1,0 +1,6 @@
+{
+  "name": "Agentic Commerce Studio",
+  "description": "Dual-pane Copilot Simulator and live Firestore Catalog Graph demonstrating LLM tool calling, merchant controls, and grounded agentic commerce actions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

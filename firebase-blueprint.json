@@ -1,0 +1,283 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Canonical product identity and attributes in the commerce catalog.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Unique product identifier"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "description": "Canonical product title"
+        },
+        "brand": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Brand name"
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Product taxonomy category"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "description": "Short canonical product description"
+        },
+        "unit_size": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "Package size or unit weight"
+        },
+        "gtin": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 32,
+          "description": "Global Trade Item Number"
+        },
+        "dietary_tags": {
+          "type": "array",
+          "description": "Bounded list of up to 10 dietary/attribute tags"
+        },
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Creator UID"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "brand",
+        "category",
+        "description",
+        "unit_size",
+        "gtin",
+        "dietary_tags",
+        "ownerId",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Offer": {
+      "title": "Offer",
+      "description": "Merchant-specific volatile pricing, inventory, and agent governance controls under a canonical product.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Unique offer identifier"
+        },
+        "productId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Parent canonical product ID"
+        },
+        "merchant_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Merchant identifier"
+        },
+        "merchant_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Merchant display name"
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Store city or fulfillment zone"
+        },
+        "price": {
+          "type": "number",
+          "description": "Offer unit price in USD"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD"],
+          "description": "ISO currency code"
+        },
+        "availability_status": {
+          "type": "string",
+          "enum": ["in_stock", "low_stock", "out_of_stock"],
+          "description": "Live inventory availability status"
+        },
+        "stock_count": {
+          "type": "integer",
+          "description": "Current available units"
+        },
+        "merchant_controls": {
+          "type": "object",
+          "description": "Supply-side AI agent permissions and fulfillment rules"
+        },
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Creator UID"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "productId",
+        "merchant_id",
+        "merchant_name",
+        "location",
+        "price",
+        "currency",
+        "availability_status",
+        "stock_count",
+        "merchant_controls",
+        "ownerId",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Reservation": {
+      "title": "Reservation",
+      "description": "Persisted agentic action receipt created when a user reserves an eligible merchant offer.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Unique reservation ID"
+        },
+        "userId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Authenticated user UID"
+        },
+        "productId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Product ID"
+        },
+        "offerId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Offer ID"
+        },
+        "productName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "description": "Snapshot product name"
+        },
+        "merchantName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Snapshot merchant name"
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Store location"
+        },
+        "price": {
+          "type": "number",
+          "description": "Unit price at time of reservation"
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Reserved unit count"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["reserved", "cancelled"],
+          "description": "Reservation lifecycle status"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "productId",
+        "offerId",
+        "productName",
+        "merchantName",
+        "location",
+        "price",
+        "quantity",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Canonical product identity documents."
+    },
+    "/products/{productId}/offers/{offerId}": {
+      "schema": { "$ref": "#/entities/Offer" },
+      "description": "Merchant-specific volatile pricing, inventory, and merchant_controls sub-collection."
+    },
+    "/reservations/{reservationId}": {
+      "schema": { "$ref": "#/entities/Reservation" },
+      "description": "User-owned reservation action receipts."
+    }
+  }
+}

@@ -28,12 +28,17 @@ export function Header({
   ];
 
   return (
-    <header className="h-14 border-b border-slate-200 bg-white px-6 flex items-center justify-between gap-8 shrink-0">
+    <header className="relative h-14 border-b border-[#dadce0] bg-white px-6 flex items-center justify-between gap-8 shrink-0">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-55% to-[#34A853]"
+      />
+
       {/* Zone 1: Single text element wordmark */}
       <button
         type="button"
         onClick={() => onSelectTab('simulator')}
-        className="font-display text-base font-bold tracking-tight text-slate-900 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
+        className="font-display text-base font-semibold tracking-tight text-[#1f1f1f] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1a73e8]"
       >
         Agentic Commerce Studio
       </button>
@@ -47,10 +52,10 @@ export function Header({
               key={item.id}
               type="button"
               onClick={() => onSelectTab(item.id)}
-              className={`h-full px-1 text-sm font-medium transition-colors whitespace-nowrap shrink-0 border-b-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
+              className={`h-full px-1.5 text-sm font-medium transition-colors whitespace-nowrap shrink-0 border-b-[3px] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a73e8] ${
                 isActive
-                  ? 'border-blue-600 text-slate-900'
-                  : 'border-transparent text-slate-500 hover:text-slate-900'
+                  ? 'border-[#1a73e8] text-[#1a73e8]'
+                  : 'border-transparent text-[#5f6368] hover:text-[#1f1f1f]'
               }`}
             >
               {item.label}
@@ -62,26 +67,26 @@ export function Header({
       {/* Zone 3: Single primary action */}
       <div className="flex items-center shrink-0">
         {authLoading ? (
-          <span className="text-xs text-slate-400 whitespace-nowrap shrink-0">
+          <span className="text-xs text-[#747775] whitespace-nowrap shrink-0">
             Checking session
           </span>
         ) : user ? (
           <button
             type="button"
             onClick={onSignOut}
-            className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-blue-600"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium text-[#1f1f1f] bg-[#f0f4f9] hover:bg-[#e1e8f2] border border-[#dadce0] rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#1a73e8]"
             title={user.email ?? 'Signed in'}
           >
             <span className="max-w-[140px] truncate">
               {user.displayName || user.email}
             </span>
-            <LogOut className="w-3.5 h-3.5 text-slate-500" aria-hidden="true" />
+            <LogOut className="w-3.5 h-3.5 text-[#5f6368]" aria-hidden="true" />
           </button>
         ) : (
           <button
             type="button"
             onClick={onSignIn}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-[#1a73e8] hover:bg-[#1557b0] rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a73e8]"
           >
             <LogIn className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Sign In with Google</span>

@@ -41,43 +41,43 @@ const TOOL_SCHEMA_SAMPLE = {
 export function ArchitectureView() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-8 space-y-8">
-      <div className="border-b border-slate-200 pb-6 space-y-2">
-        <h1 className="font-display text-2xl font-bold tracking-tight text-slate-900">
+      <div className="border-b border-[#dadce0] pb-6 space-y-2">
+        <h1 className="font-display text-2xl font-bold tracking-tight text-[#1f1f1f]">
           Commerce Foundation Architecture
         </h1>
-        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
+        <p className="text-sm text-[#444746] max-w-3xl leading-relaxed">
           Reference blueprint showing how separating canonical product identity from volatile merchant offers and governance controls turns an LLM from a passive answer engine into a verifiable action engine.
         </p>
       </div>
 
       {/* Three Architectural Pillars */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2.5">
-          <div className="flex items-center gap-2 text-slate-900 font-display font-semibold text-sm">
-            <Database className="w-4 h-4 text-blue-600 shrink-0" aria-hidden="true" />
+        <div className="rounded-2xl border border-[#dadce0] bg-[#f8fafd] p-5 space-y-2.5">
+          <div className="flex items-center gap-2 text-[#1f1f1f] font-display font-semibold text-sm">
+            <Database className="w-4 h-4 text-[#1a73e8] shrink-0" aria-hidden="true" />
             <span>01. Firestore Catalog Graph</span>
           </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Canonical product attributes live in <span className="font-mono text-slate-800">/products</span> while volatile per-merchant pricing, inventory counts, and <span className="font-mono text-slate-800">merchant_controls</span> live in nested <span className="font-mono text-slate-800">/offers</span> sub-collections.
+          <p className="text-xs text-[#444746] leading-relaxed">
+            Canonical product attributes live in <span className="font-mono text-[#1f1f1f]">/products</span> while volatile per-merchant pricing, inventory counts, and <span className="font-mono text-[#1f1f1f]">merchant_controls</span> live in nested <span className="font-mono text-[#1f1f1f]">/offers</span> sub-collections.
           </p>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2.5">
-          <div className="flex items-center gap-2 text-slate-900 font-display font-semibold text-sm">
-            <Cpu className="w-4 h-4 text-blue-600 shrink-0" aria-hidden="true" />
+        <div className="rounded-2xl border border-[#dadce0] bg-[#f8fafd] p-5 space-y-2.5">
+          <div className="flex items-center gap-2 text-[#1f1f1f] font-display font-semibold text-sm">
+            <Cpu className="w-4 h-4 text-[#1a73e8] shrink-0" aria-hidden="true" />
             <span>02. Catalog API & Tool Loop</span>
           </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Express orchestrates <span className="font-mono text-slate-800">gemini-4-hydrogen</span> with strict <span className="font-mono text-slate-800">search_catalog</span> and <span className="font-mono text-slate-800">reserve_offer</span> function declarations so every price and stock claim is tool-grounded.
+          <p className="text-xs text-[#444746] leading-relaxed">
+            Express orchestrates <span className="font-mono text-[#1f1f1f]">gemini-4-hydrogen</span> with strict <span className="font-mono text-[#1f1f1f]">search_catalog</span> and <span className="font-mono text-[#1f1f1f]">reserve_offer</span> function declarations so every price and stock claim is tool-grounded.
           </p>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2.5">
-          <div className="flex items-center gap-2 text-slate-900 font-display font-semibold text-sm">
-            <Layers className="w-4 h-4 text-blue-600 shrink-0" aria-hidden="true" />
+        <div className="rounded-2xl border border-[#dadce0] bg-[#f8fafd] p-5 space-y-2.5">
+          <div className="flex items-center gap-2 text-[#1f1f1f] font-display font-semibold text-sm">
+            <Layers className="w-4 h-4 text-[#1a73e8] shrink-0" aria-hidden="true" />
             <span>03. Dual-Pane Agentic UI</span>
           </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
+          <p className="text-xs text-[#444746] leading-relaxed">
             Pairs a consumer Copilot chat surface with an inspectable 4-stage developer trace, bridging supply-side catalog pipelines and final user experience in one screen-shareable workbench.
           </p>
         </div>
@@ -85,12 +85,12 @@ export function ArchitectureView() {
 
       {/* Schema & Tool Contracts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-xl border border-slate-200 bg-slate-900 p-5 space-y-3 text-slate-100">
+        <div className="rounded-2xl border border-[#303134] bg-[#1e1f20] p-5 space-y-3 text-[#e3e3e3]">
           <div>
-            <h2 className="font-display text-sm font-semibold text-slate-100">
+            <h2 className="font-display text-sm font-semibold text-[#e3e3e3]">
               Identity vs. Offer Sub-Collection Model
             </h2>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-[#9aa0a6] mt-1">
               Decouples slow-changing product metadata from high-frequency store offer updates.
             </p>
           </div>
@@ -101,12 +101,12 @@ export function ArchitectureView() {
           />
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-slate-900 p-5 space-y-3 text-slate-100">
+        <div className="rounded-2xl border border-[#303134] bg-[#1e1f20] p-5 space-y-3 text-[#e3e3e3]">
           <div>
-            <h2 className="font-display text-sm font-semibold text-slate-100">
+            <h2 className="font-display text-sm font-semibold text-[#e3e3e3]">
               Gemini FunctionDeclaration Contract
             </h2>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-[#9aa0a6] mt-1">
               Structured parameter extraction schema exposed to the server-side orchestration layer.
             </p>
           </div>

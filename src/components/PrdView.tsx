@@ -173,13 +173,13 @@ export function PrdView({ user }: PrdViewProps) {
   return (
     <div className="max-w-4xl mx-auto px-6 py-8 space-y-6">
       {/* Action Header */}
-      <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-5 flex flex-wrap items-center justify-between gap-4">
+      <div className="rounded-2xl border border-[#dadce0] bg-[#f8fafd] p-5 flex flex-wrap items-center justify-between gap-4">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-            <FileText className="w-4 h-4 text-blue-600 shrink-0" aria-hidden="true" />
+          <div className="flex items-center gap-2 text-sm font-semibold text-[#1f1f1f]">
+            <FileText className="w-4 h-4 text-[#1a73e8] shrink-0" aria-hidden="true" />
             <span>Product Requirements &amp; Technical Design</span>
           </div>
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-[#444746]">
             Includes workbench architecture, industry catalog maintenance (Google &amp; Microsoft patterns), Cloud Gemini vs. Browser LiteRT-LM (<span className="font-mono">@litert-lm/core</span>), data generation, and 3-tier eval principles.
           </p>
         </div>
@@ -188,11 +188,11 @@ export function PrdView({ user }: PrdViewProps) {
           <button
             type="button"
             onClick={() => void handleCopyMarkdown()}
-            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#1f1f1f] bg-white hover:bg-[#f0f4f9] border border-[#dadce0] rounded-full transition-colors whitespace-nowrap cursor-pointer"
           >
             {copied ? (
               <>
-                <Check className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                <Check className="w-3.5 h-3.5 text-[#1e8e3e]" aria-hidden="true" />
                 <span>Copied Markdown</span>
               </>
             ) : (
@@ -209,7 +209,7 @@ export function PrdView({ user }: PrdViewProps) {
               setExportError(null);
               setConfirmOpen(true);
             }}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-[#1a73e8] hover:bg-[#1557b0] rounded-full transition-colors whitespace-nowrap cursor-pointer"
           >
             <FileText className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Export to Google Doc</span>
@@ -219,12 +219,12 @@ export function PrdView({ user }: PrdViewProps) {
 
       {/* Created Doc Banner */}
       {createdDoc && (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 flex flex-wrap items-center justify-between gap-4">
+        <div className="rounded-2xl border border-[#ceead6] bg-[#e6f4ea] px-5 py-4 flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-0.5">
-            <div className="text-sm font-semibold text-emerald-950">
+            <div className="text-sm font-semibold text-[#0d652d]">
               Google Doc Created
             </div>
-            <div className="text-xs text-emerald-800">
+            <div className="text-xs text-[#137333]">
               &ldquo;{createdDoc.title}&rdquo; has been written to your Google Docs account.
             </div>
           </div>
@@ -232,7 +232,7 @@ export function PrdView({ user }: PrdViewProps) {
             href={createdDoc.documentUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-[#1e8e3e] hover:bg-[#137333] rounded-full transition-colors whitespace-nowrap"
           >
             <span>Open in Google Docs</span>
             <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
@@ -241,13 +241,13 @@ export function PrdView({ user }: PrdViewProps) {
       )}
 
       {exportError && !confirmOpen && (
-        <div className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-800">
+        <div className="rounded-xl border border-[#fad2cf] bg-[#fce8e6] px-4 py-3 text-xs text-[#c5221f]">
           {exportError}
         </div>
       )}
 
       {/* Document Body */}
-      <article className="rounded-xl border border-slate-200 bg-white p-8 space-y-4">
+      <article className="rounded-2xl border border-[#dadce0] bg-white p-8 space-y-4">
         {renderBlocks()}
       </article>
 
@@ -257,18 +257,18 @@ export function PrdView({ user }: PrdViewProps) {
           role="dialog"
           aria-modal="true"
           aria-labelledby="export-doc-modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
         >
-          <div className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-6 shadow-xl space-y-4">
+          <div className="w-full max-w-md rounded-3xl border border-[#dadce0] bg-white p-6 shadow-xl space-y-4">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h2
                   id="export-doc-modal-title"
-                  className="font-display text-base font-semibold text-slate-900"
+                  className="font-display text-base font-semibold text-[#1f1f1f]"
                 >
                   Create Google Doc?
                 </h2>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-xs text-[#444746] mt-1 leading-relaxed">
                   This will create a new document in Google Docs{user?.email ? ` for ${user.email}` : ''} and write the complete PRD, dual-runtime design, data generation spec, and eval principles into it.
                 </p>
               </div>
@@ -277,7 +277,7 @@ export function PrdView({ user }: PrdViewProps) {
                 onClick={() => setConfirmOpen(false)}
                 disabled={exporting}
                 aria-label="Close modal"
-                className="text-slate-400 hover:text-slate-700 cursor-pointer"
+                className="text-[#5f6368] hover:text-[#1f1f1f] cursor-pointer"
               >
                 <X className="w-4 h-4" aria-hidden="true" />
               </button>
@@ -286,7 +286,7 @@ export function PrdView({ user }: PrdViewProps) {
             <div className="space-y-1.5">
               <label
                 htmlFor="google-doc-title"
-                className="block text-xs font-medium text-slate-700"
+                className="block text-xs font-medium text-[#444746]"
               >
                 Document Title
               </label>
@@ -296,18 +296,18 @@ export function PrdView({ user }: PrdViewProps) {
                 value={docTitle}
                 onChange={(e) => setDocTitle(e.target.value)}
                 disabled={exporting}
-                className="w-full px-3 py-2 text-xs text-slate-900 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-blue-600 focus:bg-white"
+                className="w-full px-3.5 py-2 text-xs text-[#1f1f1f] bg-[#f0f4f9] border border-[#dadce0] rounded-xl focus:outline-none focus:border-[#1a73e8] focus:bg-white"
               />
             </div>
 
             {!getGoogleDocsAccessToken() && (
-              <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-[11px] text-slate-600 leading-relaxed">
+              <div className="rounded-xl border border-[#dadce0] bg-[#f8fafd] px-3.5 py-2.5 text-[11px] text-[#444746] leading-relaxed">
                 Clicking <strong>Confirm &amp; Create Doc</strong> will ask you to sign in / grant Google Docs permission if your session does not yet hold an active Google Docs token.
               </div>
             )}
 
             {exportError && (
-              <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-800">
+              <div className="rounded-xl border border-[#fad2cf] bg-[#fce8e6] px-3.5 py-2 text-xs text-[#c5221f]">
                 {exportError}
               </div>
             )}
@@ -317,7 +317,7 @@ export function PrdView({ user }: PrdViewProps) {
                 type="button"
                 onClick={() => setConfirmOpen(false)}
                 disabled={exporting}
-                className="px-3.5 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors cursor-pointer"
+                className="px-4 py-2 text-xs font-medium text-[#1a73e8] bg-white hover:bg-[#f0f4f9] rounded-full transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -325,7 +325,7 @@ export function PrdView({ user }: PrdViewProps) {
                 type="button"
                 disabled={exporting || !docTitle.trim()}
                 onClick={() => void handleConfirmExport()}
-                className="px-4 py-2 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-60 rounded-lg transition-colors cursor-pointer"
+                className="px-4 py-2 text-xs font-medium text-white bg-[#1a73e8] hover:bg-[#1557b0] disabled:opacity-60 rounded-full transition-colors cursor-pointer"
               >
                 {exporting ? 'Creating Google Doc...' : 'Confirm & Create Doc'}
               </button>

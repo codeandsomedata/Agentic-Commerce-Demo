@@ -266,20 +266,20 @@ export function CopilotSimulator({
   return (
     <section
       aria-label="Copilot User Experience"
-      className="flex flex-col h-full bg-white text-slate-900 overflow-hidden"
+      className="flex flex-col h-full bg-white text-[#1f1f1f] overflow-hidden"
     >
       {/* Left Pane Utility Header */}
-      <div className="px-5 py-3 border-b border-slate-200 bg-slate-50/70 flex flex-wrap items-center justify-between gap-3 shrink-0">
-        <div className="flex items-center gap-2 text-xs text-slate-600">
-          <Database className="w-3.5 h-3.5 text-slate-500 shrink-0" aria-hidden="true" />
-          <span className="font-medium text-slate-800">
+      <div className="px-5 py-3 border-b border-[#dadce0] bg-[#f8fafd] flex flex-wrap items-center justify-between gap-3 shrink-0">
+        <div className="flex items-center gap-2 text-xs text-[#444746]">
+          <Database className="w-3.5 h-3.5 text-[#1a73e8] shrink-0" aria-hidden="true" />
+          <span className="font-medium text-[#1f1f1f]">
             {isLiveSeeded ? 'Live Cloud Firestore' : 'Preview Catalog'}
           </span>
           <span aria-hidden="true">·</span>
           <button
             type="button"
             onClick={onOpenCatalogTab}
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium cursor-pointer"
+            className="inline-flex items-center gap-1 text-[#1a73e8] hover:text-[#1557b0] font-medium cursor-pointer"
           >
             <span>Edit Offers</span>
             <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
@@ -291,32 +291,32 @@ export function CopilotSimulator({
           <div
             role="group"
             aria-label="Model Runtime"
-            className="inline-flex items-center p-0.5 bg-slate-200/80 rounded-lg border border-slate-200"
+            className="inline-flex items-center p-0.5 bg-[#e9eef6] rounded-full border border-[#dadce0]"
           >
             <button
               type="button"
               disabled={sending}
               onClick={() => onChangeRuntime('cloud_gemini')}
-              className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md transition-colors whitespace-nowrap cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full transition-colors whitespace-nowrap cursor-pointer ${
                 runtime === 'cloud_gemini'
-                  ? 'bg-white text-slate-900 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-[#0b57d0] shadow-xs'
+                  : 'text-[#444746] hover:text-[#1f1f1f]'
               }`}
             >
-              <Cloud className="w-3 h-3 text-blue-600 shrink-0" aria-hidden="true" />
+              <Cloud className="w-3 h-3 text-[#1a73e8] shrink-0" aria-hidden="true" />
               <span>Cloud Gemini</span>
             </button>
             <button
               type="button"
               disabled={sending}
               onClick={() => onChangeRuntime('browser_litert')}
-              className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md transition-colors whitespace-nowrap cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full transition-colors whitespace-nowrap cursor-pointer ${
                 runtime === 'browser_litert'
-                  ? 'bg-white text-slate-900 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-[#137333] shadow-xs'
+                  : 'text-[#444746] hover:text-[#1f1f1f]'
               }`}
             >
-              <Cpu className="w-3 h-3 text-emerald-600 shrink-0" aria-hidden="true" />
+              <Cpu className="w-3 h-3 text-[#1e8e3e] shrink-0" aria-hidden="true" />
               <span>Browser LiteRT-LM</span>
             </button>
           </div>
@@ -326,7 +326,7 @@ export function CopilotSimulator({
               type="button"
               onClick={() => void onSeedCatalog()}
               disabled={seeding}
-              className="px-3 py-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-60 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="px-3.5 py-1.5 text-xs font-medium text-white bg-[#1a73e8] hover:bg-[#1557b0] disabled:opacity-60 rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               {seeding ? 'Seeding...' : 'Seed Live Firestore'}
             </button>
@@ -335,7 +335,7 @@ export function CopilotSimulator({
             <button
               type="button"
               onClick={handleClear}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#444746] hover:text-[#1f1f1f] hover:bg-[#e9eef6] rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Reset</span>
@@ -346,10 +346,10 @@ export function CopilotSimulator({
 
       {/* Browser LiteRT-LM Configuration Strip */}
       {runtime === 'browser_litert' && (
-        <div className="px-5 py-2.5 border-b border-slate-200 bg-slate-50 space-y-2 shrink-0">
+        <div className="px-5 py-2.5 border-b border-[#dadce0] bg-[#f0f4f9] space-y-2 shrink-0">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2 min-w-0">
-              <label htmlFor="litert-model-select" className="text-xs font-medium text-slate-600 whitespace-nowrap">
+              <label htmlFor="litert-model-select" className="text-xs font-medium text-[#444746] whitespace-nowrap">
                 WebGPU Model:
               </label>
               <select
@@ -365,7 +365,7 @@ export function CopilotSimulator({
                     onChangeLitertModelUri(val);
                   }
                 }}
-                className="px-2.5 py-1 text-xs font-medium text-slate-800 bg-white border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                className="px-2.5 py-1 text-xs font-medium text-[#1f1f1f] bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:border-[#1a73e8]"
               >
                 {LITERT_MODEL_PRESETS.map((preset) => (
                   <option key={preset.id} value={preset.uri}>
@@ -378,7 +378,7 @@ export function CopilotSimulator({
               <button
                 type="button"
                 onClick={() => setShowTokenInput((prev) => !prev)}
-                className="text-[11px] font-medium text-slate-500 hover:text-slate-800 underline cursor-pointer"
+                className="text-[11px] font-medium text-[#444746] hover:text-[#1f1f1f] underline cursor-pointer"
               >
                 {showTokenInput ? 'Hide HF Token' : 'HF Token (Optional)'}
               </button>
@@ -388,10 +388,10 @@ export function CopilotSimulator({
               <span
                 className={`text-xs font-medium ${
                   litertStatus === 'ready'
-                    ? 'text-emerald-700'
+                    ? 'text-[#1e8e3e]'
                     : litertStatus === 'error'
-                      ? 'text-rose-700'
-                      : 'text-slate-600'
+                      ? 'text-[#d93025]'
+                      : 'text-[#444746]'
                 }`}
               >
                 {litertStatus === 'ready'
@@ -406,7 +406,7 @@ export function CopilotSimulator({
                 type="button"
                 disabled={litertStatus === 'loading' || sending}
                 onClick={() => void onInitLitert()}
-                className="px-2.5 py-1 text-xs font-medium text-slate-800 bg-white hover:bg-slate-100 border border-slate-300 disabled:opacity-50 rounded-md transition-colors whitespace-nowrap cursor-pointer"
+                className="px-3 py-1 text-xs font-medium text-[#0b57d0] bg-white hover:bg-[#e8f0fe] border border-[#dadce0] disabled:opacity-50 rounded-full transition-colors whitespace-nowrap cursor-pointer"
               >
                 {litertStatus === 'loading'
                   ? 'Loading...'
@@ -425,7 +425,7 @@ export function CopilotSimulator({
                   value={litertModelUri}
                   onChange={(e) => onChangeLitertModelUri(e.target.value)}
                   placeholder="hf://org/repo or https://.../model.litertlm"
-                  className="flex-1 min-w-[220px] px-2.5 py-1 text-xs font-mono text-slate-800 bg-white border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                  className="flex-1 min-w-[220px] px-2.5 py-1 text-xs font-mono text-[#1f1f1f] bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:border-[#1a73e8]"
                 />
               )}
               {showTokenInput && (
@@ -434,28 +434,28 @@ export function CopilotSimulator({
                   value={litertToken}
                   onChange={(e) => onChangeLitertToken(e.target.value)}
                   placeholder="Hugging Face access token (for gated models)"
-                  className="flex-1 min-w-[200px] px-2.5 py-1 text-xs text-slate-800 bg-white border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                  className="flex-1 min-w-[200px] px-2.5 py-1 text-xs text-[#1f1f1f] bg-white border border-[#dadce0] rounded-lg focus:outline-none focus:border-[#1a73e8]"
                 />
               )}
             </div>
           )}
 
           {litertError && (
-            <div className="text-[11px] text-rose-700 leading-snug">
+            <div className="text-[11px] text-[#d93025] leading-snug">
               {litertError}
             </div>
           )}
           {!litertError && matchedPreset && (
-            <div className="text-[11px] text-slate-500 leading-snug">
-              Runs locally in your browser via <span className="font-mono text-slate-700">@litert-lm/core</span> WebGPU ({matchedPreset.hint}); tool calls hit <span className="font-mono text-slate-700">/api/catalog/*</span> so Firestore &amp; merchant controls remain server-authoritative.
+            <div className="text-[11px] text-[#5f6368] leading-snug">
+              Runs locally in your browser via <span className="font-mono text-[#1f1f1f]">@litert-lm/core</span> WebGPU ({matchedPreset.hint}); tool calls hit <span className="font-mono text-[#1f1f1f]">/api/catalog/*</span> so Firestore &amp; merchant controls remain server-authoritative.
             </div>
           )}
         </div>
       )}
 
       {/* Scenario Preset Strip */}
-      <div className="px-5 py-2.5 border-b border-slate-200 bg-white flex items-center gap-2 overflow-x-auto shrink-0">
-        <span className="text-xs font-medium text-slate-500 whitespace-nowrap shrink-0">
+      <div className="px-5 py-2.5 border-b border-[#dadce0] bg-white flex items-center gap-2 overflow-x-auto shrink-0">
+        <span className="text-xs font-medium text-[#5f6368] whitespace-nowrap shrink-0">
           Demo Prompts:
         </span>
         {SCENARIO_PRESETS.map((preset) => (
@@ -464,7 +464,7 @@ export function CopilotSimulator({
             type="button"
             disabled={sending}
             onClick={() => void sendPrompt(preset)}
-            className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200/80 disabled:opacity-50 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            className="px-3 py-1.5 text-xs font-medium text-[#1f1f1f] bg-[#f0f4f9] hover:bg-[#d3e3fd] hover:text-[#0842a0] disabled:opacity-50 rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           >
             {preset}
           </button>
@@ -475,25 +475,25 @@ export function CopilotSimulator({
       <div className="flex-1 overflow-y-auto px-5 py-5 space-y-5">
         {messages.length === 0 ? (
           <div className="h-full flex flex-col justify-center max-w-lg mx-auto py-8">
-            <h1 className="font-display text-2xl font-bold tracking-tight text-slate-900 mb-3 text-balance">
+            <h1 className="font-display text-2xl font-bold tracking-tight text-[#1f1f1f] mb-3 text-balance">
               Copilot Commerce Action Engine
             </h1>
-            <p className="text-sm text-slate-600 leading-relaxed mb-6">
-              Instead of a static product grid, this assistant translates natural-language shopping constraints into structured queries against a Cloud Firestore <span className="font-mono text-xs text-slate-800">products</span> and <span className="font-mono text-xs text-slate-800">offers</span> graph, respecting live inventory and <span className="font-mono text-xs text-slate-800">merchant_controls</span>.
+            <p className="text-sm text-[#444746] leading-relaxed mb-6">
+              Instead of a static product grid, this assistant translates natural-language shopping constraints into structured queries against a Cloud Firestore <span className="font-mono text-xs text-[#1f1f1f]">products</span> and <span className="font-mono text-xs text-[#1f1f1f]">offers</span> graph, respecting live inventory and <span className="font-mono text-xs text-[#1f1f1f]">merchant_controls</span>.
             </p>
-            <div className="border-t border-slate-200 pt-5 space-y-3">
-              <div className="text-xs font-medium text-slate-500">
-                Try the primary interview walkthrough prompt:
+            <div className="border-t border-[#dadce0] pt-5 space-y-3">
+              <div className="text-xs font-medium text-[#5f6368]">
+                Try the primary walkthrough prompt:
               </div>
               <button
                 type="button"
                 onClick={() => void sendPrompt(SCENARIO_PRESETS[0])}
-                className="w-full text-left px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100/80 transition-colors cursor-pointer flex items-center justify-between gap-4"
+                className="w-full text-left px-4 py-3.5 rounded-2xl border border-[#dadce0] bg-[#f8fafd] hover:bg-[#e8f0fe] hover:border-[#1a73e8]/40 transition-colors cursor-pointer flex items-center justify-between gap-4"
               >
-                <span className="text-sm font-medium text-slate-900">
+                <span className="text-sm font-medium text-[#1f1f1f]">
                   &ldquo;{SCENARIO_PRESETS[0]}&rdquo;
                 </span>
-                <span className="text-xs font-medium text-blue-600 whitespace-nowrap shrink-0">
+                <span className="text-xs font-medium text-[#1a73e8] whitespace-nowrap shrink-0">
                   Run Prompt
                 </span>
               </button>
@@ -504,7 +504,7 @@ export function CopilotSimulator({
             if (msg.role === 'user') {
               return (
                 <div key={msg.id} className="flex justify-end">
-                  <div className="max-w-[85%] rounded-xl bg-slate-100 border border-slate-200 px-4 py-3 text-sm text-slate-900">
+                  <div className="max-w-[85%] rounded-2xl rounded-tr-sm bg-[#e8f0fe] border border-[#d2e3fc] px-4 py-3 text-sm text-[#1f1f1f]">
                     {msg.content}
                   </div>
                 </div>
@@ -519,50 +519,50 @@ export function CopilotSimulator({
                 onClick={() => {
                   if (msg.trace) setSelectedTraceId(msg.trace.id);
                 }}
-                className={`rounded-xl border p-4 transition-colors space-y-4 ${
+                className={`rounded-2xl border p-4 transition-colors space-y-4 ${
                   msg.trace ? 'cursor-pointer' : ''
                 } ${
                   isTraceSelected
-                    ? 'border-blue-600/60 bg-blue-50/30'
-                    : 'border-slate-200 bg-white hover:border-slate-300'
+                    ? 'border-[#1a73e8]/60 bg-[#f8fafd]'
+                    : 'border-[#dadce0] bg-white hover:border-[#bdc1c6]'
                 }`}
               >
-                <div className="flex items-center justify-between gap-2 text-xs text-slate-500">
+                <div className="flex items-center justify-between gap-2 text-xs text-[#5f6368]">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-slate-900">Commerce Copilot</span>
+                    <span className="font-semibold text-[#1f1f1f]">Commerce Copilot</span>
                     {msg.trace?.tool_called && (
                       <>
                         <span aria-hidden="true">·</span>
-                        <span className="font-mono-tabular text-slate-600">
+                        <span className="font-mono-tabular text-[#444746]">
                           tool: {msg.trace.tool_called}
                         </span>
                       </>
                     )}
                   </div>
                   {msg.trace && (
-                    <span className="text-blue-600 font-medium">
+                    <span className="text-[#1a73e8] font-medium">
                       {isTraceSelected ? 'Inspecting Trace' : 'Inspect Trace'}
                     </span>
                   )}
                 </div>
 
                 {msg.error ? (
-                  <div className="rounded-lg border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-xs text-rose-800">
+                  <div className="rounded-xl border border-[#fad2cf] bg-[#fce8e6] px-3.5 py-2.5 text-xs text-[#c5221f]">
                     {msg.error}
                   </div>
                 ) : (
-                  <div className="text-sm text-slate-800 leading-relaxed whitespace-pre-wrap">
+                  <div className="text-sm text-[#1f1f1f] leading-relaxed whitespace-pre-wrap">
                     {msg.content}
                   </div>
                 )}
 
                 {/* Grounded Actionable Offer Results */}
                 {msg.matches && msg.matches.length > 0 && (
-                  <div className="border-t border-slate-200 pt-3 space-y-2.5">
-                    <div className="text-xs font-medium text-slate-500">
+                  <div className="border-t border-[#dadce0] pt-3 space-y-2.5">
+                    <div className="text-xs font-medium text-[#5f6368]">
                       Grounded Merchant Offers ({msg.matches.length})
                     </div>
-                    <div className="divide-y divide-slate-200 border border-slate-200 rounded-lg bg-white overflow-hidden">
+                    <div className="divide-y divide-[#dadce0] border border-[#dadce0] rounded-xl bg-white overflow-hidden">
                       {msg.matches.map((match) => {
                         const { product, offer } = match;
                         const reserved = activeReservationForOffer(offer.id);
@@ -579,10 +579,10 @@ export function CopilotSimulator({
 
                         const stockColorClass =
                           offer.availability_status === 'in_stock'
-                            ? 'text-emerald-700'
+                            ? 'text-[#1e8e3e]'
                             : offer.availability_status === 'low_stock'
-                              ? 'text-amber-700'
-                              : 'text-rose-700';
+                              ? 'text-[#b06000]'
+                              : 'text-[#d93025]';
 
                         return (
                           <div
@@ -590,11 +590,11 @@ export function CopilotSimulator({
                             className="p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                           >
                             <div className="min-w-0 space-y-1">
-                              <div className="text-sm font-semibold text-slate-900 truncate">
+                              <div className="text-sm font-semibold text-[#1f1f1f] truncate">
                                 {product.name}
                               </div>
-                              <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-slate-500">
-                                <span className="font-medium text-slate-700">
+                              <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-[#5f6368]">
+                                <span className="font-medium text-[#1f1f1f]">
                                   {offer.merchant_name}
                                 </span>
                                 <span aria-hidden="true">·</span>
@@ -606,7 +606,7 @@ export function CopilotSimulator({
                                 <span aria-hidden="true">·</span>
                                 <span
                                   className={
-                                    agentAllowed ? 'text-slate-600' : 'text-rose-700 font-medium'
+                                    agentAllowed ? 'text-[#444746]' : 'text-[#d93025] font-medium'
                                   }
                                 >
                                   {agentAllowed
@@ -617,12 +617,12 @@ export function CopilotSimulator({
                             </div>
 
                             <div className="flex items-center gap-3 shrink-0">
-                              <span className="font-mono-tabular text-sm font-semibold text-slate-900">
+                              <span className="font-mono-tabular text-sm font-semibold text-[#1f1f1f]">
                                 ${offer.price.toFixed(2)}
                               </span>
 
                               {reserved ? (
-                                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 whitespace-nowrap">
+                                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1e8e3e] whitespace-nowrap">
                                   <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" />
                                   <span>Reserved</span>
                                 </span>
@@ -634,7 +634,7 @@ export function CopilotSimulator({
                                     e.stopPropagation();
                                     void handleReserveClick(match);
                                   }}
-                                  className="px-3 py-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-60 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                                  className="px-3.5 py-1.5 text-xs font-medium text-white bg-[#1a73e8] hover:bg-[#1557b0] disabled:opacity-60 rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                                 >
                                   {reservingOfferId === offer.id
                                     ? 'Reserving...'
@@ -643,8 +643,8 @@ export function CopilotSimulator({
                                       : 'Sign In & Reserve'}
                                 </button>
                               ) : (
-                                <span className="inline-flex items-center gap-1 text-xs text-slate-500 whitespace-nowrap">
-                                  <ShieldAlert className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+                                <span className="inline-flex items-center gap-1 text-xs text-[#5f6368] whitespace-nowrap">
+                                  <ShieldAlert className="w-3.5 h-3.5 text-[#747775]" aria-hidden="true" />
                                   <span>Policy Restricted</span>
                                 </span>
                               )}
@@ -658,9 +658,9 @@ export function CopilotSimulator({
 
                 {/* Pending Reservation Summary from reserve_offer tool */}
                 {msg.pendingReservation && (
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-700 flex items-center justify-between gap-3">
+                  <div className="rounded-xl border border-[#dadce0] bg-[#f8fafd] px-3.5 py-2.5 text-xs text-[#444746] flex items-center justify-between gap-3">
                     <div>
-                      <span className="font-semibold text-slate-900">
+                      <span className="font-semibold text-[#1f1f1f]">
                         Action Gate ({msg.pendingReservation.allowed ? 'Authorized' : 'Blocked'}):
                       </span>{' '}
                       {msg.pendingReservation.allowed
@@ -675,15 +675,15 @@ export function CopilotSimulator({
         )}
 
         {sending && messages[messages.length - 1]?.content === '' && (
-          <div className="rounded-xl border border-slate-200 bg-white p-4 space-y-2.5">
-            <div className="h-3.5 w-32 bg-slate-200 rounded" />
-            <div className="h-3 w-full bg-slate-100 rounded" />
-            <div className="h-3 w-3/4 bg-slate-100 rounded" />
+          <div className="rounded-2xl border border-[#dadce0] bg-white p-4 space-y-2.5">
+            <div className="h-3.5 w-32 bg-[#e9eef6] rounded" />
+            <div className="h-3 w-full bg-[#f0f4f9] rounded" />
+            <div className="h-3 w-3/4 bg-[#f0f4f9] rounded" />
           </div>
         )}
 
         {actionError && (
-          <div className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-2.5 text-xs text-rose-800">
+          <div className="rounded-xl border border-[#fad2cf] bg-[#fce8e6] px-4 py-2.5 text-xs text-[#c5221f]">
             {actionError}
           </div>
         )}
@@ -694,7 +694,7 @@ export function CopilotSimulator({
       {/* Chat Composer */}
       <form
         onSubmit={handleSubmit}
-        className="p-4 border-t border-slate-200 bg-white shrink-0"
+        className="p-4 border-t border-[#dadce0] bg-white shrink-0"
       >
         <div className="flex items-center gap-2.5">
           <input
@@ -703,12 +703,12 @@ export function CopilotSimulator({
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask Copilot (e.g., Get me Kite Hill yogurt under $6 in Mountain View)..."
             disabled={sending}
-            className="flex-1 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+            className="flex-1 px-4 py-2.5 text-sm text-[#1f1f1f] placeholder:text-[#747775] bg-[#f0f4f9] border border-transparent rounded-full focus:outline-none focus:border-[#1a73e8] focus:bg-white transition-colors"
           />
           <button
             type="submit"
             disabled={sending || !input.trim()}
-            className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-[#1a73e8] hover:bg-[#1557b0] disabled:opacity-50 rounded-full transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           >
             <Send className="w-4 h-4" aria-hidden="true" />
             <span>Send</span>

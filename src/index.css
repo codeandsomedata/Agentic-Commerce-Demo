@@ -11,7 +11,7 @@
   body {
     font-family: var(--font-sans);
     background-color: #ffffff;
-    color: #0f172a;
+    color: #1f1f1f;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -36,14 +36,14 @@
 }
 
 .dark-inspector-scroll::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #131314;
 }
 
 .dark-inspector-scroll::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #3c4043;
   border-radius: 4px;
 }
 
 .dark-inspector-scroll::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #5f6368;
 }

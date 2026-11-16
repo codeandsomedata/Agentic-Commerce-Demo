@@ -10,6 +10,11 @@ npm run dev
 npm run demo
 ```
 
+### Visual Snapshots
+- **Copilot + 4-Stage Trace:** [01-copilot-trace-live.png](screenshots/01-copilot-trace-live.png)
+- **Live Catalog Graph:** [02-catalog-graph.png](screenshots/02-catalog-graph.png)
+- **End-to-End Architecture Diagram (PRD):** [03-prd-architecture-diagram.png](screenshots/03-prd-architecture-diagram.png)
+
 ---
 
 ## 1. Server Health Check

@@ -62,6 +62,19 @@ It demonstrates how a canonical **Product-Offer Catalog Graph**, **server-author
 
 ---
 
+## Screenshots
+
+### 1. Copilot Workbench & 4-Stage Live Trace Inspector
+![Copilot Workbench and 4-Stage Live Trace Inspector](docs/demo/screenshots/01-copilot-trace-live.png)
+
+### 2. Live Supply-Side Catalog Graph
+![Live Supply-Side Catalog Graph](docs/demo/screenshots/02-catalog-graph.png)
+
+### 3. End-to-End Architecture Diagram & PRD
+![End-to-End Architecture Diagram and PRD](docs/demo/screenshots/03-prd-architecture-diagram.png)
+
+---
+
 ## Tech Stack
 
 - **Frontend:** React 19, TypeScript, Tailwind CSS v4, Lucide Icons, Vite 8
@@ -83,7 +96,8 @@ It demonstrates how a canonical **Product-Offer Catalog Graph**, **server-author
 │   └── run-demo.mjs                   # Automated end-to-end live API + SSE demo runner
 ├── docs/
 │   └── demo/
-│       └── LIVE_RUN_DEMO.md           # Recorded live run transcript & tool trace outputs
+│       ├── LIVE_RUN_DEMO.md           # Recorded live run transcript & tool trace outputs
+│       └── screenshots/               # Captured UI screenshots (Copilot + Trace, Catalog Graph, PRD Architecture)
 └── src/
     ├── App.tsx                        # Main workbench shell, auth state, runtime & catalog wiring
     ├── components/
